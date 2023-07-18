@@ -15,7 +15,7 @@ int main(void)
 	sum = 0;
 	pre_pre = 1;
 	pre = 2;
-	total_add = 0;
+	total_add = 2;
 	while (sum < 4000000)
 	{
 		sum = pre_pre + pre;
