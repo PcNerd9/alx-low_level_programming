@@ -3,14 +3,12 @@
 
 /**
  * print_to_98 - prints all the natural numbers from n to 98
+ *
  * display - print the number in bytes
- * @c: the parameter to be printed
  * @n: the parameter to be printed by bytes
  *
  *Return: nothing
  */
-void display(int c);
-
 void print_to_98(int n)
 {
 	int a;
