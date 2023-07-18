@@ -8,18 +8,20 @@
 int main(void)
 {
 	int i;
-	int first;
-	int second;
-	int sum;
+	unsigned long pre_pre;
+	unsigned long pre;
+	unsigned long sum;
 
+	pre_pre = 1;
+	pre = 2;
 	for (i = 1; i <= 50; i++)
 	{
 		if (i > 2)
 		{
-		first = i - 1;
-		second = i - 2;
-		sum = first + second;
-		printf("%d", sum);
+			sum = pre_pre + pre;
+			pre_pre = pre;
+			pre = sum;
+			printf("%ld", sum);
 		if (i < 50)
 		{
 			printf(", ");
