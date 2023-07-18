@@ -12,9 +12,9 @@ int main(void)
 	int second;
 	int sum;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
-		if (i > 1)
+		if (i > 2)
 		{
 		first = i - 1;
 		second = i - 2;
