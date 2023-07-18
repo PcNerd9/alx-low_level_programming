@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * main - check the code
@@ -8,8 +9,9 @@
  */
 int main(void)
 {
-	int n;
-	n = add(89, 9);
-    printf("%d\n", n);
+	    int r;
+   	r =  print_last_digit(INT_MIN);
+    _putchar('0' + r);
+    _putchar('\n');
 	return (0);
 }
