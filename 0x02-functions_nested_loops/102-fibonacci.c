@@ -8,21 +8,21 @@
 int main(void)
 {
 	int i;
-	unsigned long pre_pre;
-	unsigned long pre;
-	unsigned long sum;
+	unsigned long long pre_pre;
+	unsigned long long pre;
+	unsigned long long sum;
 
 	pre_pre = 1;
 	pre = 2;
-	for (i = 1; i <= 50; i++)
+	for (i = 1; i <= 98; i++)
 	{
 		if (i > 2)
 		{
 			sum = pre_pre + pre;
 			pre_pre = pre;
 			pre = sum;
-			printf("%ld", sum);
-		if (i < 50)
+			printf("%lld", sum);
+		if (i < 98)
 		{
 			printf(", ");
 		}
