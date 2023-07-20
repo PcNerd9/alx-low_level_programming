@@ -7,34 +7,39 @@
  */
 int main(void)
 {
-	long i = 612852475143;
+	long i = 612852;
 	long j;
 	long k;
-	int is_prime;
+	long l;
+	int is_prime = 1;
 	long greatest_no = 0;
 
-	for (j = 2; j < i / 2; j++)
+	j = i / 2;
+
+	for (k = 2; k < i; k++)
 	{
 		is_prime = 1;
-		if (i % j == 0)
+		if (i % k == 0)
 		{
-			printf("%ld\n", j);
-			for (k = 2; k < j; k++)
+			printf("%ld\n", k);
+			for (l = 2; l < k; l++)
 			{
-				if (j % k == 0)
+				if (k % l == 0)
 				{
 					is_prime = 0;
 					break;
 				}
-			}
-			if (is_prime == 1)
-			{
-				if (j > greatest_no)
+				if (is_prime = 1)
 				{
-					greatest_no = j;
+					if (k > greatest_no)
+					{
+						greatest_no = k;
+					}
 				}
 			}
 		}
 	}
 	printf("%ld\n", greatest_no);
+	return (0);
+
 }

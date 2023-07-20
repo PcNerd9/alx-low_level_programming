@@ -18,7 +18,7 @@ int main(void)
     _putchar('\n');
     print_number(-98);
     _putchar('\n');
-    print_number(12334554);
+    print_number(-'"');
     _putchar('\n');
 	return (0);
 }
