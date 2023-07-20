@@ -8,11 +8,17 @@
  */
 int main(void)
 {
-	char c;
-
-	 c = '0';
-    printf("%c: %d\n", c, _isdigit(c));
-    c = '9';
-    printf("%c: %d\n", c, _isdigit(c));
+	 print_number(98);
+    _putchar('\n');
+    print_number(402);
+    _putchar('\n');
+    print_number(1024);
+    _putchar('\n');
+    print_number(0);
+    _putchar('\n');
+    print_number(-98);
+    _putchar('\n');
+    print_number(12334554);
+    _putchar('\n');
 	return (0);
 }
