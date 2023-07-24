@@ -23,5 +23,6 @@ int main(void)
 		password[i] = characters[rand() % 72];
 	}
 	password[no_of_pwd] = '\0';
+	printf("%s\n", password);
 	return (0);
 }
