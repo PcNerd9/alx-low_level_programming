@@ -8,10 +8,9 @@
  */
 int main(void)
 {
-	char *str;
+ char *str;
 
-    str = "I love You!";
-    puts2(str);
+    str = "My School";
+    puts_half(str);
     return (0);
-
 }
