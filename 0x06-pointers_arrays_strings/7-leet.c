@@ -1,37 +1,28 @@
 #include "main.h"
 
-
 /**
+ * leet - encode a string in 1337 encryption format 
+ *@str: the string to be encrypted
  *
- *
- *
+ * Return: the encrypted string
  */
 
 char *leet(char *str)
 {
+	char letter[10]  = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char replace[10] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 	int i = 0;
+	int j;
 
 	while (*(str + i) != '\0')
 	{
-		if (*(str + i) == 'a' || *(str + i) == 'A')
+		for (j = 0; j < 10; j++)
 		{
-			*(str + i) = '4';
-		}
-		else if (*(str + i) == 'e' || *(str + i) == 'E')
-		{
-			*(str + i) = '3';
-		}
-		else if (*(str + i) == 'o' || *(str + i) == 'O')
-		{
-			*(str + i) = '0';
-		}
-		else if (*(str + i) == 't' || *(str + i) == 'T')
-		{
-			*(str + i) = '7';
-		}
-		else if (*(str + i) == 'l' || *(str + i) == 'L')
-		{
-			*(str + i) = '1';
+			if (str[i] == letter[j])
+			{
+				str[i] = replace[j];
+				break;
+			}
 		}
 		i++;
 	}
