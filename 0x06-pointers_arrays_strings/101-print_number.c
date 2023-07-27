@@ -10,7 +10,7 @@
 void print_number(int n)
 {
 	int remainder;
-	int mul = 1;
+	unsigned int mul = 1;
 	unsigned int num;
 
 	if (n < 0)
