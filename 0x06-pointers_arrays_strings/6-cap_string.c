@@ -21,7 +21,7 @@ char *cap_string(char *str)
 		if (i == 0 && *(str + i) >= 'a' && *(str + i) <= 'z')
 		{
 			char_byte = *(str + i) - 'a';
-			*(str + i) = *(str + i) + 'A';
+			*(str + i) = char_byte + 'A';
 		}
 		for (j = 0; j < 13; j++)
 		{
