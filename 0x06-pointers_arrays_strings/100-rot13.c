@@ -9,18 +9,37 @@
 
 char *rot13(char *str)
 {
-	int i = 0;
+	char letter[56] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+			'i', 'j', 'k', 'l', 'm',
+			'n', 'o', 'p', 'q', 'r',
+			's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+			'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+			'I', 'J', 'K', 'L', 'M',
+			'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+			'V', 'W', 'X', 'Y', 'Z'};
 
-	for (i = 0; str[i] != '\0'; i++)
+	char replace[56] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+			'w', 'x', 'y', 'z',
+			'a', 'b', 'c', 'd', 'e', 'f',
+			'g', 'h', 'i', 'j', 'k', 'l', 'm',
+			'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+			'U', 'V', 'W', 'X', 'Y', 'Z',
+			'A', 'B', 'C', 'D', 'E', 'F',
+			'G', 'H', 'I', 'J', 'K', 'L', 'M'};
+	int i = 0;
+	int j;
+
+	while (*(str + i) != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+		for (j = 0; j < 56; j++)
 		{
-			str[i] = str[i] + 13;
+			if (str[i] == letter[j])
+			{
+				str[i] = replace[j];
+				break;
+			}
 		}
-		else if ((str[i] > 'm' && str[i] <= 'z') || (str[i] > 'M' && str[i] <= 'Z'))
-		{
-			str[i] = str[i] - 13;
-		}
+		i++;
 	}
 	return (str);
 }

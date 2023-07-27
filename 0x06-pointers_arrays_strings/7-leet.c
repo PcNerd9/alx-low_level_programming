@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * leet - encode a string in 1337 encryption format 
+ * leet - encode a string in 1337 encryption format
  *@str: the string to be encrypted
  *
  * Return: the encrypted string
