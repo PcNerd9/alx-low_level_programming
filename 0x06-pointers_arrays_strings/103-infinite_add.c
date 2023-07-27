@@ -55,14 +55,14 @@ void swap_int(int *a, int *b)
 /**
  * reverse_string - reverse the arrangement of an array
  * @str: the string to reverse
- * @len: the lenght of the string
  *
  * Return: the reversed string
  */
-char *reverse_string(char *str, int len)
+char *reverse_string(char *str)
 {
 	int i;
 	char k;
+	int len = _strlen(str);
 
 	for (i = 0; i < len / 2; i++)
 	{
@@ -112,7 +112,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 				remainder = sum / 10;
 			}
 			else
+			{
 				*(r + j) = sum + '0';
+			}
 			j++;
 		}
 		if (remainder)
@@ -120,5 +122,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	else
 		return (0);
-	return (reverse_string(r, n1_len + 1));
+	return (reverse_string(r));
 }
