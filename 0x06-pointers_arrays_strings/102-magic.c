@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - entry point
- *
- * Return: alway 0 on success
- */
 int main(void)
 {
 	int n;
