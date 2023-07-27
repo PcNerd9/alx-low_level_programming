@@ -9,21 +9,10 @@
 
 int main(void)
 {
-	char *n;
-	char *m;
-        char r3[11];
-        char *res;
+	 char buffer[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
 
-        n = "12345678123435355649";
-        m = "2324356787432567656";
-        res = infinite_add(n, m, r3, 11);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        return (0);
+    printf("%s\n", buffer);
+    printf("---------------------------------\n");
+    print_buffer(buffer, sizeof(buffer));
+    return (0);
 }
