@@ -37,10 +37,10 @@ void simple_print_buffer(char *buffer, unsigned int size)
 int main(void)
 {
 	 char *s = "hello, world";
-    char *f = "k";
-    unsigned int n;
+    char *f = " w,rd";
+    char *t;
 
-    n = _strspn(s, f);
-    printf("%u\n", n);
+    t = _strpbrk(s, f);
+    printf("%s\n", t);
     return (0);
 }
