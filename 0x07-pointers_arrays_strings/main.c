@@ -36,14 +36,11 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-	char *s = "hello";
-    char *f;
+	 char *s = "hello, world";
+    char *f = "k";
+    unsigned int n;
 
-    f = _strchr(s, 'l');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
+    n = _strspn(s, f);
+    printf("%u\n", n);
     return (0);
 }
