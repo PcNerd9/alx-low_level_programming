@@ -36,12 +36,11 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-	char *s = "hello, world. The world is great";
+	 char *s0 = "Bob Dylan";
+    char *s1 = "Robert Allen";
 
-    char *f = "world";
-    char *t;
-
-    t = _strstr(s, f);
-    printf("%s\n", t);
+    printf("%s, %s\n", s0, s1);
+    set_string(&s1, s0);
+    printf("%s, %s\n", s0, s1);
     return (0);
 }
