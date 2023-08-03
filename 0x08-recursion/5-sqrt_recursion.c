@@ -28,10 +28,6 @@ int _sqrt_recursion(int n)
 	{
 		return (n);
 	}
-	else if ((n ** (1 / 2)) != (int)(n ** (1 / 2)))
-	{
-		return (-1);
-	}
 	else
 	{
 		return  (computesqrroot(n, (n / 2.0)));
