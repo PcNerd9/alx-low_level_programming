@@ -11,7 +11,7 @@ int _atoi(char *s)
 {
 	int i;
 	int num = 0;
-
+	
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	int i;
 	int mul = 1;
 
-	if (argc == 1)
+	if (argc == 1 || argc > 3)
 	{
 		printf("Error\n");
 		return (1);
