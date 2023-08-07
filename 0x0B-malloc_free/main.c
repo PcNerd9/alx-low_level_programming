@@ -28,7 +28,7 @@ int main(void)
 {
     char **tab;
 
-    tab = strtow("          I am                  going to be the best software      engineer           in the world            l");
+    tab = strtow("I am going to be one of the best software engineer in the world     ");
     if (tab == NULL)
     {
         printf("Failed\n");

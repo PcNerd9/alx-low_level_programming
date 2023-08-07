@@ -32,36 +32,31 @@ int no_of_words(char *str)
 char **strtow(char *str)
 {
 	int no_words;
-	int i, j, k, l = 0;
-	char **ptr;
-	char *word; 
-	int lenght = 0;
+	int i, j, k, l = 0, lenght = 0;
+	char **ptr, *word;
 
-	if (str == NULL || str == " ")
+	if (*str == '\0' || str == NULL)
 		return (NULL);
 	no_words = no_of_words(str);
-	
+	if (no_words == 0)
+		return (NULL);
 	ptr = (char **)malloc(sizeof(char *) * (no_words + 1));
 	if (ptr == NULL)
 		return (NULL);
-	
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
 		{
-
 			lenght = 0;
 			j = i;
 			while (str[j] != ' ' && str[j] != '\0')
 			{
-				lenght++;
-				j++;
+				lenght++, j++;
 			}
 			word = (char *)malloc(sizeof(char) * (lenght + 1));
 			if (word == NULL)
 				return (NULL);
-			j = i;
-			k = 0;
+			j = i, k = 0;
 			while (str[j] != ' ' && str[j] != '\0')
 			{
 				*(word + k) = str[j];
@@ -71,7 +66,6 @@ char **strtow(char *str)
 			*(word + k) = '\0';
 			ptr[l] = word;
 			l++;
-
 			i = j - 1;
 		}
 	}
