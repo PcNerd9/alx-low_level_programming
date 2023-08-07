@@ -37,7 +37,7 @@ char **strtow(char *str)
 	char *word; 
 	int lenght = 0;
 
-	if (str == NULL)
+	if (str == NULL || str == " ")
 		return (NULL);
 	no_words = no_of_words(str);
 	
