@@ -1,8 +1,16 @@
 #include <stdio.h>
 
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	printf("What is going wrong");
+	int i, j;
+	int lenght = 0;
+
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+			lenght++;
+	}
+	printf("lenght = %d\n", lenght);
 	return (0);
 }	
