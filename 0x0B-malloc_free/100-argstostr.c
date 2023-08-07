@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * argstost - it concatinates all the arguments of your program
+ * argstostr- it concatinates all the arguments of your program
  *@ac: the number of the arguments
  *@av: a pointer to the array of the argument
  *
@@ -26,7 +27,7 @@ char *argstostr(int ac, char **av)
 	}
 	lenght += ac;
 	ptr = (char *)malloc(sizeof(char) * lenght);
-	if (!ptr)
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
