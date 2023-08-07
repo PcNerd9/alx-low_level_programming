@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * main - check the code for ALX School students.
  *
@@ -11,10 +10,10 @@ int main(void)
 {
     char *s;
 
-    s = _strdup("I am going to be one of the well known and most successful software engineer in this world ");
+    s = str_concat("", "");
     if (s == NULL)
     {
-        printf("failed to allocate memory\n");
+        printf("failed\n");
         return (1);
     }
     printf("%s\n", s);
