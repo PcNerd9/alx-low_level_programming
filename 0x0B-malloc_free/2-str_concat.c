@@ -5,7 +5,7 @@
  * _strlen - compute the lenght of a string
  *@s: a pointer to the string
  *
- *Return: the lenght of of the string 
+ *Return: the lenght of of the string
  */
 
 int _strlen(char *s)
@@ -33,8 +33,24 @@ char *str_concat(char *s1, char *s2)
 	int total_lenght;
 	char *ptr;
 
-	lenght1 = _strlen(s1);
-	lenght2 = _strlen(s2);
+	if (s1 != NULL)
+	{
+		lenght1 = _strlen(s1);
+	}
+	else
+	{
+		lenght1 = 0;
+		s1 = "";
+	}
+	if (s2 != NULL)
+	{
+		lenght2 = _strlen(s2);
+	}
+	else
+	{
+		lenght2 = 0;
+		s2 = "";
+	}
 	total_lenght = ((lenght1 + lenght2 + 1) * sizeof(char));
 
 	ptr = (char *)malloc(total_lenght);
