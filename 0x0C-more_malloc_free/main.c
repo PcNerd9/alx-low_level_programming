@@ -38,15 +38,10 @@ void simple_print_buffer(int *buffer, unsigned int size)
  */
 int main(void)
 {
-	int *a;
+    int *a;
 
-    a = _calloc(98, sizeof(int));
-    a[1]  = 1;
-    a[0] = 0;
-    a[2] = 2;
-    a[4] = 40;
-    a[97] = 400;
-    simple_print_buffer(a, 98);
+    a = array_range(20, 10);
+    simple_print_buffer(a, 11);
     free(a);
     return (0);
 }
