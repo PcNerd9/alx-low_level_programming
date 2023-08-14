@@ -1,7 +1,12 @@
 #ifndef DOG_H
 #define DOG_H
 
-/* @struct dog: a new datatype that stores all the property of a dog */
+/**
+ * struct dog - a new datatype that stores all the property of a dog
+ * @name: the name of the dog
+ * @age: the age of the dog
+ * @owner: the name of the owner
+*/
 struct dog
 {
 	char *name;
