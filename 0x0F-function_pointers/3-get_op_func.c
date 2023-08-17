@@ -1,52 +1,34 @@
-#include <stdio.h>
-#include "function_pointers.h"
+#include "3-calc.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * print_name_as_is - prints a name as is
- * @name: name of the person
+ * get_op_func - selects the correct function to perfom the operation
+ * asked by the user
+ * @s: a pointer to the choice of operator
  *
- * Return: Nothing.
+ * Return: a pointer to the selected function
  */
-void print_name_as_is(char *name)
-{
-    printf("Hello, my name is %s\n", name);
-}
 
-/**
- * print_name_uppercase - print a name in uppercase
- * @name: name of the person
- *
- * Return: Nothing.
- */
-void print_name_uppercase(char *name)
+int (*get_op_func(char *s))(int, int)
 {
-    unsigned int i;
+	op_t ops[] = {
+	{"+", op_add},
+	{"-", op_sub},
+	{"*", op_mul},
+	{"/", op_div},
+	{"%", op_mod},
+	{NULL, NULL}
+	};
+	int i = 0;
 
-    printf("Hello, my uppercase name is ");
-    i = 0;
-    while (name[i])
-    {
-        if (name[i] >= 'a' && name[i] <= 'z')
-        {
-            putchar(name[i] + 'A' - 'a');
-        }
-        else
-        {
-            putchar(name[i]);
-        }
-        i++;
-    }
-}
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    print_name("Bob", print_name_as_is);
-    print_name("Bob Dylan", print_name_uppercase);
-    printf("\n");
-    return (0);
+	while (i < 5)
+	{
+		if (!strcmp(ops[i].op, s))
+		{
+			return (ops[i].f);
+		}
+		i++;
+	}
+	return (NULL);
 }
