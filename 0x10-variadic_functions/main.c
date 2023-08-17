@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("ceififficds", 'B', 3, 2.5, 4, 5.6, 6.7, 3, 'v', NULL);
+    print_numbers(NULL, 4, 0, 98, -1024, 402);
     return (0);
 }
