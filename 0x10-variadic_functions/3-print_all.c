@@ -13,9 +13,8 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i = 0;
+	char *s;
 
-	if (format == NULL)
-		return;
 	va_start(args, format);
 
 	while (format[i] != '\0')
@@ -39,7 +38,13 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(args, double));
 				break;
 			case 's':
-				printf("%s", va_arg(args, char *));
+				s = va_arg(args, char *);
+				if (s == NULL)
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", s);
 				break;
 		}
 		i++;
