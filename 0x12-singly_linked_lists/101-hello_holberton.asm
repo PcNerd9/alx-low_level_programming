@@ -7,13 +7,14 @@ global main
 extern printf
 
 main:
-    push rsi
+    push rdi
     lea rdi, [hello]
-    xor rax, rax
     call printf
-    pop rsi
+    pop rdi
 
-    ret
+    xor edi, edi
+    mov eax, 60
+    syscall
 
 section .note.GNU-stack noalloc noexec nowrite progbits
 
