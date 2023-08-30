@@ -30,11 +30,12 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (begin_loop != NULL)
 		{
-		do {
-			printf("[%p] %d\n", (void *)&temp->n, temp->n);
-			temp = temp->next;
-			lenght++;
-		} while (temp != begin_loop);
+			do {
+				printf("[%p] %d\n", (void *)&temp->n, temp->n);
+				temp = temp->next;
+				lenght++;
+			} while (temp != begin_loop);
+			printf("->[%p] %d\n", (void *)&begin_loop->n, begin_loop->n);
 		}
 	}
 	return (lenght);
