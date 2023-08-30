@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * listintt_len  - compute the total number of elements in a list
+ * listint_len  - compute the total number of elements in a list
  * @h: a pointer to the head node
  *
  * Return: the total lenght
