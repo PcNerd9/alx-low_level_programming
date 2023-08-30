@@ -11,6 +11,8 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *tortise, *hare;
 
+	if (head == NULL)
+		return (NULL);
 	tortise = hare = head;
 
 	while (hare != NULL && hare->next != NULL)
