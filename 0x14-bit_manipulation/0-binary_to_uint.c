@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * binary_to_uint - convert a binary number to decimal number
  * @b: a pointer to the string of the binary numbers
  *

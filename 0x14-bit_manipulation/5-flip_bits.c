@@ -19,7 +19,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		if (xclusive & 1)
 			lenght++;
-		xclusive = xclusive >> 1; 
+		xclusive = xclusive >> 1;
 	}
 	return (lenght);
 }
