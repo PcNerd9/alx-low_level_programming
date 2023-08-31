@@ -13,6 +13,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int compare, check, i;
 
 	check = *n;
+	if (n == NULL)
+		return (-1);
 	for (i = 0; i < index; i++)
 	{
 		if (check > 1)
