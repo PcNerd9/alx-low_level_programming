@@ -23,6 +23,8 @@ int main(int agc, char **argv)
 		exit(97);
 	}
 
+	if (argv[1] == NULL || argv[2] == NULL)
+		exit(100);
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from < 0)
 	{
