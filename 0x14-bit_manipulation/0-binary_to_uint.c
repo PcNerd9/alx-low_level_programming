@@ -1,43 +1,30 @@
-#include "bit.h"
+#include "main.h"
 
 /**
- * _strlen - compute the lenght of a s tring
- * @string: a pointer to the string
+ * binary_to_uint - convert a binary number to decimal number
+ * @b: a pointer to the string of the binary numbers
  *
- * Return: the lenght computed
+ * Return: the converted number
  */
-unsigned int _strlen(const char *string)
-{
-	unsigned int i, lenght = 0;
 
-	for (i = 0; string[i] != '\0'; i++)
-	{
-		lenght++;
-	}
-	return (lenght);
-}
-
-/**
- * binary_to_uint - convert a binary string to decimal integer
- * @b: a pointer to the binary string
- *
- * Return: the decimal integer
- */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int decimal = 0, base = 1, lenght;
-	int i;
+	int lenght = 0, i;
+	unsigned int multiplier = 1, number = 0;
 
 	if (b == NULL)
 		return (0);
-	lenght = _strlen(b);
+	for (i = 0; b[i] != '\0'; i++)
+		lenght++;
 	for (i = lenght - 1; i >= 0; i--)
 	{
-		if (b[i] >= '0' && b[i] <= '9')
-			decimal += (b[i] - '0') * base;
+		if (b[i] == '1' || b[i] == '0')
+		{
+			number += (b[i] - '0') * multiplier;
+		}
 		else
 			return (0);
-		base *= 2;
+		multiplier *= 2;
 	}
-	return (decimal);
+	return (number);
 }
