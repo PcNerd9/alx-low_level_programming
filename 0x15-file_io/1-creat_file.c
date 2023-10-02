@@ -3,6 +3,24 @@
 #include <string.h>
 
 /**
+ * _strlen - compute the lenght of the string
+ * @string: the lenght 0f the string
+ *
+ * Return: the lenght of the string
+ */
+int _strlen(char *string)
+{
+	int lenght = 0;
+
+	while (*string != '\0')
+	{
+		lenght++;
+		string++;
+	}
+	return (lenght);
+}
+
+/**
  * create_file - create a new file or write to an existing file
  * @filename: the name of the file
  * @text_content: the content to write to the file
@@ -24,11 +42,13 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (text_content != NULL)
 	{
-		bytewrite = write(fd, text_content, strlen(text_content));
+		bytewrite = write(fd, text_content, _strlen(text_content));
 		if (bytewrite <= 0)
 		{
+			 close(fd);
 			return (-1);
 		}
 	}
+	close(fd);
 	return (1);
 }
