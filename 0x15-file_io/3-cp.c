@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 {
 	pid_t dest_fd;
 	pid_t source_fd;
-	char *buffer[1024];
+	char buffer[1024];
 	ssize_t byteread, bytewrite;
 
 	if (argc == 3)
