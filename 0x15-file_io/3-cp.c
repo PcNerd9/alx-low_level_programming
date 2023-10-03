@@ -4,6 +4,24 @@
 #include <stdio.h>
 
 /**
+ * close_fd - close a file
+ * @fd_ptr: the file descriptor of the file to close
+ *
+ * Return: nothing
+ */
+void close_fd(pid_t *fd_ptr)
+{
+	int status;
+
+	status = close(*fd_ptr);
+	if (status == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", *fd_ptr);
+		exit(100);
+	}
+}
+
+/**
  * main - copies from file to another
  * @argc: the number of arguments passed
  * @argv: an array of arguments passed
@@ -29,6 +47,7 @@ int main(int argc, char *argv[])
 		if (dest_fd <= 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close_fd(&source_fd);
 			exit(99);
 		}
 		while ((byteread = read(source_fd, buffer, 1024)) > 0)
@@ -37,10 +56,13 @@ int main(int argc, char *argv[])
 			if (bytewrite <= 0)
 			{
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+				close_fd(&source_fd);
+				close_fd(&dest_fd);
 				exit(99);
 			}
 		}
-
+		close_fd(&source_fd);
+		close_fd(&dest_fd);
 	}
 	else
 	{
