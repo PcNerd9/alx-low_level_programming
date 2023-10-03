@@ -5,7 +5,11 @@
 #include <stdio.h>
 
 /**
- * read_elf_header - done
+ * read_elf_header - read an elf header
+ * @fd: the file discriptor
+ * @header: a pointer to an Elf64_Ehdr file strcuture
+ *
+ * Return: nothing
  */
 void read_elf_header(int fd, Elf64_Ehdr *header)
 {
@@ -15,6 +19,12 @@ void read_elf_header(int fd, Elf64_Ehdr *header)
 		exit(98);
 	}
 }
+/**
+ * validate_elf_file - checks if the file is an elf file
+ * @header: a pointe to the header to check
+ *
+ * Return: nothing
+ */
 void validate_elf_file(Elf64_Ehdr *header)
 {
 	if (header->e_ident[EI_MAG0] != ELFMAG0 ||
@@ -35,6 +45,7 @@ void validate_elf_file(Elf64_Ehdr *header)
 void display_elf_header(Elf64_Ehdr *header)
 {
 	int i;
+
 	printf("Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
@@ -43,9 +54,10 @@ void display_elf_header(Elf64_Ehdr *header)
 	printf("\nClass:           ");
 	printf("%s\n", header->e_ident[EI_CLASS] == ELFCLASS64 ? "ELF64" : "ELF32");
 	printf("Data:             ");
-	printf("%s\n", header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "2's complement, big endian");
+	printf("%s\n", header->e_ident[EI_DATA] == ELFDATA2LSB ?
+			"2's complement, little endian" : "2's complement, big endian");
 	printf("Version:          ");
-	printf("%u\n", header->e_ident[EI_VERSION]);
+	printf("%u (current)\n", header->e_ident[EI_VERSION]);
 	printf("0S/ABI:           ");
 	printf("%u\n", header->e_ident[EI_OSABI]);
 	printf("ABI Version:      ");
@@ -53,12 +65,13 @@ void display_elf_header(Elf64_Ehdr *header)
 	printf("Type:             ");
 	printf("%u\n", header->e_type);
 	printf("Entry point address:       ");
-	printf("%#010x\n", (unsigned int)header->e_entry);
+	printf("%#08x\n", (unsigned int)header->e_entry);
 
 }
 
 /**
- * main - displays the information contained in the ELF header at the start of an Elf
+ * main - displays the information contained
+ * in the ELF header at the start of an Elf
  * file
  * @argc: the number of arguments passed
  * @argv: a pointer to the strings passed
@@ -85,7 +98,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(2, "Error: Cannot read %s file\n", argv[1]);
 		close(fd);
-	       exit(98);	
+	       exit(98);
 	}
 	if (header.e_ident[EI_MAG0] != ELFMAG0 ||
 			header.e_ident[EI_MAG1] != ELFMAG1 ||
