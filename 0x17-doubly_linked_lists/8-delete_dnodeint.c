@@ -1,4 +1,5 @@
-#include "list.h"
+#include "lists.h"
+#include <stdlib.h>
 
 /**
  * delete_dnodeint_at_index - deletes the node at index of
@@ -13,14 +14,22 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *tmp, *prev, *next;
 	unsigned int i = 1;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return (-1);
+	if (index == 0)
+	{
+		tmp = *head;
+		*head = tmp->next;
+		free(tmp);
+		return (1);
+	}
 	tmp = *head;
-	while (i < index)
+	while (i <= index)
 	{
 		if (tmp == NULL)
 			return (-1);
 		tmp = tmp->next;
+		i++;
 	}
 	if (tmp->next == NULL)
 	{

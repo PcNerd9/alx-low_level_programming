@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdio.h>
-
 /**
  * print_dlistint - prints all the elements of a dlistint_t
  * @h: the head of a double linked list
