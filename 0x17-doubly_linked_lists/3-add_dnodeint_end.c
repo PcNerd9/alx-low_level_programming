@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * add_dnodeint_end - add a new node to the end of the node
+ * @head: a pointer to the head of the double linked list
+ * @n: the number to add
+ *
+ * Return: the new node
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *tmp, *new_node;
