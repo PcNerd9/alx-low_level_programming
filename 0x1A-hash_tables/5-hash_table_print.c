@@ -30,10 +30,9 @@ void hash_table_print(const hash_table_t *ht)
 				inner_tmp = tmp[i]->next;
 				while (inner_tmp)
 				{
+					printf(", ");
 					printf("'%s': '%s'", inner_tmp->key, inner_tmp->value);
 					inner_tmp = inner_tmp->next;
-					if (inner_tmp != NULL)
-						printf(", ");
 				}
 			}
 		}
