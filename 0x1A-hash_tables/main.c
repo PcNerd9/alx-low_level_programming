@@ -29,8 +29,9 @@ int main(void)
     value[0] = '\0';
     free(key);
     free(value);
-    hash_table_set(ht, '\0', "Battery Street");
-    hash_table_set(ht, "98", "Battery Street"); 
+    hash_table_set(ht, "", "Battery Street");
+    hash_table_set(ht, "98", "");
+	hash_table_set(ht, "98", "Battery Street"); 
     hash_table_set(ht, "hetairas", "Bob");
     hash_table_set(ht, "hetairas", "Bob Z");
     hash_table_set(ht, "mentioner", "Bob");
