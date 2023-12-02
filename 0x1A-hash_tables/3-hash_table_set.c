@@ -53,6 +53,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (strcmp(current_node->key, key) == 0)
 	{
 		free(current_node->value);
+		current_node->value = (char *)malloc(sizeof(char) * strlen(value) + 1);
 		current_node->value = strcpy(current_node->value, value);
 		return (1);
 	}
