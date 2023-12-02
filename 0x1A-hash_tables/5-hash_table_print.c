@@ -11,7 +11,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t **tmp, *inner_tmp;
-	unsigned long int i, j;
+	unsigned long int i, j = 0;
 
 	if (ht == NULL)
 		return;
