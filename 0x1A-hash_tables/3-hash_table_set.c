@@ -63,32 +63,3 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	ht->array[index] = new_node;
 	return (1);
 }
-
-void print_table(hash_table_t *ht, unsigned long int size)
-{
-	hash_node_t **tmp, *inner_tmp;
-	unsigned long int i;
-
-	if (ht == NULL)
-	       return;
-	tmp = ht->array;
-	printf("----------hash table-----------------\n");
-	for (i = 0; i < size; i++)
-	{
-		if (tmp[i] != NULL)
-		{
-			printf("key: %s, \tvalue: %s\n", tmp[i]->key, tmp[i]->value);
-			if (tmp[i]->next != NULL)
-			{
-				printf("--------inner linked list--------\n");
-				inner_tmp = tmp[i]->next;
-				while (inner_tmp)
-				{
-					printf("\tkey: %s, \tValue: %s\n", inner_tmp->key, inner_tmp->value);
-					inner_tmp = inner_tmp->next;
-				}
-				printf("--------------------\n");
-			}
-		}
-	}
-}

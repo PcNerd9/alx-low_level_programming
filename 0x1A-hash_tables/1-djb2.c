@@ -12,9 +12,9 @@ unsigned long int hash_djb2(const unsigned char *str)
 	int car;
 
 	hash_value = 5381;
-	while ((c = *str++))
+	while ((car = *str++))
 	{
-		hash_value = (hash * 33) + car;
+		hash_value = (hash_value * 33) + car;
 	}
 	return (hash_value);
 }
