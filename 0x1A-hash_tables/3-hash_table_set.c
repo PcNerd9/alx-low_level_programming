@@ -38,6 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *new_node, *current_node;
 
+	if (ht == NULL)
+		return (0);
 	if (key == NULL || *key == '\0' || strcmp(key, "") == 0)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
