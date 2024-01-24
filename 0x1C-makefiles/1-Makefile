@@ -3,5 +3,4 @@ SRC = $(wildcard *.c)
 all: school
 
 school: $(SRC)
-	echo $(SRC)
 	${CC} $(SRC) -o school
