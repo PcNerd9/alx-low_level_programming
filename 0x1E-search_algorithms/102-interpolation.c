@@ -1,36 +1,48 @@
 #include <stdio.h>
-#include "search_algos.h"
 
 /**
- * interpolation_search - search for a value in an array
- * using interpolation search algorithm
- * @array: a pointer to the first element in array
- * @size: the size of the array
- * @value: the targeted value
- * Return: the index of the targeted value otherwise return -1
+ * interpolation_search - searches for a value in a sorted array
+ * of integers using interpolation search algorithm
+ * @array: a pointer to the first element of the array to search in
+ * @size: the number of elements in array
+ * @value: the value to search for
+ *
+ * Return: the index of the value in the array if found otherwise -1
  */
+
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t high = size - 1, low = 0, position = 0, result = 0;
+	size_t low = 0, high = 0, pos = 0;
+	int high_value = 0, low_value = 0, compute = 0;
 
 	if (array == NULL)
 		return (-1);
-	while (low <= high)
+	high = size - 1;
+	while (high > low)
 	{
-		result = (((double)(high - low) / (array[high] - array[low])));
-		position = low + result * (value - array[low]);
-		if (position >= size)
+		high_value = array[high];
+		low_value = array[low];
+		if (high_value == value)
+			return (high);
+		else if (low_value == value)
+			return (low);
+		compute = (value - array[low]) * (high - low);
+		compute = compute / (array[high] - array[low]);
+		pos = low + compute;
+		if (pos >= size)
 		{
-			printf("Value checked array[%ld] is out of range\n", position);
+			printf("Value checked array[%ld] is out of range\n", pos);
 			return (-1);
 		}
-		printf("Value checked array[%ld] = [%d]\n", position, array[position]);
-		if (array[position] == value)
-			return (position);
-		if (array[position] < value)
-			low = position;
-		else if (array[position] > value)
-			high = position;
+
+		printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
+		if (array[pos] == value)
+			return (pos);
+		else if (array[pos] > value)
+			high = (pos);
+		else if (array[pos] < value)
+			low = (pos);
+
 	}
 	return (-1);
 }
