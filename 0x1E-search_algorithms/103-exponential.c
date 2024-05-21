@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * binary_search - search a value using binary search algorithm
+ * bin_search - search a value using binary search algorithm
  * @array: the pointer to the first element in the array
  * @size: the size of the array
  * @value: the target value to search for

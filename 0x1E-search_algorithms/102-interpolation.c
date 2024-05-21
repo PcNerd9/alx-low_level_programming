@@ -24,12 +24,12 @@ int interpolation_search(int *array, size_t size, int value)
 		low_value = array[low];
 		if (high_value == value)
 		{
-			printf("value checked array[%ld] = [%d]\n", high, high_value);
+			printf("Value checked array[%ld] = [%d]\n", high, high_value);
 			return (high);
 		}
 		else if (low_value == value)
 		{
-			printf("value checked array[%ld] = [%d]\n", low, low_value);
+			printf("Value checked array[%ld] = [%d]\n", low, low_value);
 			return (low);
 		}
 		compute = (value - array[low]) * (high - low);
